@@ -1,0 +1,13 @@
+#cloud-config
+package_upgrade: tru
+packages:
+ - python3
+ - python3-pip
+ - git 
+runcmd: 
+ - git clone https://github.com/stevenj2019/azure_custom_image.git
+ - pip3 install flask 
+ - rm /azure_custom_image/README.md
+ - rm /azure_custom_image/script.sh
+ - python3 /azure_custom_image/app.py 
+
